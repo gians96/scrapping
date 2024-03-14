@@ -23,7 +23,7 @@ const insertDataMef = async (allData) => {
         console.error('Error al insertar datos en la base de datos:', error);
     } finally {
         console.log('Datos insertados correctamente en la base de datos.');
-
+        con.end()
     }
 }
 
