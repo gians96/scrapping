@@ -1,0 +1,6 @@
+#UNDC
+host_undc= 'TU_HOST'
+user_undc= 'TU_USUARIO'
+password_undc= 'TU_CONTRASEÑA'
+database_undc= 'TU_BASE_DE_DATOS'
+
