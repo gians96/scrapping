@@ -8,4 +8,5 @@ const connection = mysql.createConnection({
     database: process.env.database_undc
 });
 
-module.exports = { connection }
+const year = process.env.year
+module.exports = { connection, year }

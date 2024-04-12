@@ -1,5 +1,5 @@
 const mysql = require('mysql2/promise');
-const { connection } = require('../connect/undc.js');
+const { connection, year } = require('../connect/undc.js');
 
 const insertDataMef = async (allData) => {
     try {
@@ -11,9 +11,9 @@ const insertDataMef = async (allData) => {
         });
 
         for (const row of allData) {
-            const query = `INSERT INTO mef (codigo, descripcion, pia, pim, certificacion, compromiso_anual, compromiso_mensual, devengado, girado, porcentaje_avance) 
-                       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
-            const values = [row.codigo, row.descripcion, row.pia, row.pim, row.certificacion, row.compromiso_anual, row.compromiso_mensual, row.devengado, row.girado, row.porcentaje_avance];
+            const query = `INSERT INTO mef (codigo, descripcion, pia, pim, certificacion, compromiso_anual, compromiso_mensual, devengado, girado, porcentaje_avance,year) 
+                       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)`;
+            const values = [row.codigo, row.descripcion, row.pia, row.pim, row.certificacion, row.compromiso_anual, row.compromiso_mensual, row.devengado, row.girado, row.porcentaje_avance, year];
             await con.query(query, values);
         }
 
